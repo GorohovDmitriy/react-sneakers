@@ -1,23 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './Card.module.scss'
 
 
-function Card(props) {
+function Card({ title, price, imageUrl, onFavorite, onPluse }) {
+	const [isAdded, setIsAdded] = useState(false)
+
+	const onClickPlus = () => {
+		onPluse()
+		setIsAdded(!isAdded)
+	}
+
 	return (
 		<div className={styles.card}>
-			<div className={styles.favorite}>
+			<div className={styles.favorite} onClick={onFavorite}>
 				<img src='/img/heart-unliked.svg' alt='Liked' width={32} height={32} />
 			</div>
-			<img src={props.imageUrl} alt='Sneakers' width={133} height={112} />
-			<h5>{props.title}</h5>
+			<img src={imageUrl} alt='Sneakers' width={133} height={112} />
+			<h5>{title}</h5>
 			<div className='d-flex justify-between align-center'>
 				<div className='d-flex flex-column'>
 					<span>Цена:</span>
-					<b>{props.price} руб.</b>
+					<b>{price} руб.</b>
 				</div>
-				<button className='button'>
-					<img width={11} height={11} src='/img/pluse.svg' alt='Plus' />
-				</button>
+				<img className={styles.plus} onClick={onClickPlus} src={isAdded ? '/img/btn-cheked.svg' : '/img/btn-plus.svg'} alt='Plus' />
 			</div>
 		</div>
 	)
