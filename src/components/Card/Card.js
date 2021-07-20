@@ -45,7 +45,7 @@ function Card({
 					: <React.Fragment>
 						<div className={styles.favorite} onClick={onClickFavorite}>
 							{onFavorite && <img
-								src={isFavorite ? '/img/heart-liked.svg' : '/img/heart-unliked.svg'}
+								src={isFavorite ? 'img/heart-liked.svg' : 'img/heart-unliked.svg'}
 								alt='Liked'
 								width={32}
 								height={32}
@@ -61,7 +61,7 @@ function Card({
 							{onPluse && <img
 								className={styles.plus}
 								onClick={onClickPlus}
-								src={isItemAdded(id) ? '/img/btn-cheked.svg' : '/img/btn-plus.svg'}
+								src={isItemAdded(id) ? 'img/btn-cheked.svg' : 'img/btn-plus.svg'}
 								alt='Plus'
 							/>}
 						</div>

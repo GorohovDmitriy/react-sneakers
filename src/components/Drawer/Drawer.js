@@ -68,7 +68,7 @@ function Drawer({ items = [], onClose, onRemove, opened }) {
 									<img
 										onClick={() => onRemove(obj.id)}
 										className='removeBtn cu-p'
-										src='/img/btn-remove.svg'
+										src='img/btn-remove.svg'
 										alt='Remove'
 										w={32}
 										height={32}
@@ -91,7 +91,7 @@ function Drawer({ items = [], onClose, onRemove, opened }) {
 							</ul>
 							<button disabled={isLoading} onClick={onClickOrder} className='greenButton'>
 								Оформить заказ
-								<img src='/img/arrow.svg' alt='Arrow' width={13} height={12} />
+								<img src='img/arrow.svg' alt='Arrow' width={13} height={12} />
 							</button>
 						</div>
 					</React.Fragment>
@@ -103,7 +103,7 @@ function Drawer({ items = [], onClose, onRemove, opened }) {
 								? `Ваш заказ #${orderId} скоро будет передан курьерской доставке`
 								: 'Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.'
 						}
-						imageUrl={isOrderComplete ? '/img/done.jpg' : '/img/empty.jpg'}
+						imageUrl={isOrderComplete ? 'img/done.jpg' : 'img/empty.jpg'}
 					/>
 				)}
 			</div>
