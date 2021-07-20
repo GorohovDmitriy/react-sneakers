@@ -1,0 +1,55 @@
+.Slider {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 40px auto;
+	margin-bottom: 5px;
+}
+.Info {
+	position: relative;
+	margin-left: -36px;
+	height: 300px;
+	width: 280px;
+	padding: 60px;
+	padding-top: 80px;
+	background-color: #f4efe9;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	border-right: 1px solid #ccc;
+	img {
+		position: absolute;
+		top: 20px;
+		left: 20px;
+	}
+	p {
+		color: #8bb43c;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 38px;
+		line-height: 46px;
+		b {
+			color: black;
+		}
+	}
+	button {
+		width: 177.46px;
+		height: 47.09px;
+		outline: none;
+		border: 0;
+		cursor: pointer;
+		background: #a5d364;
+		border-radius: 110px;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 16px;
+		line-height: 19px;
+		text-align: center;
+		text-transform: uppercase;
+		color: #ffffff;
+		transition: opacity 0.15s ease-in-out;
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+}

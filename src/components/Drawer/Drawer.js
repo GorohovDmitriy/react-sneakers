@@ -1,16 +1,21 @@
 import axios from 'axios'
 import React from 'react'
-import AppContext from '../context'
-import Info from './Info'
+import AppContext from '../../context'
+import Info from '../Info.jsx'
+import styles from './Drawer.module.scss'
 
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
-function Drawer({ items = [], onClose, onRemove }) {
+function Drawer({ items = [], onClose, onRemove, opened }) {
 	const { cartItems, setCartItems } = React.useContext(AppContext)
 	const [isOrderComplete, setIsOrderComplete] = React.useState(false)
 	const [orderId, setOrderId] = React.useState(null)
 	const [isLoading, setIsLoading] = React.useState(false)
+
+	const totalPrice = cartItems.reduce((sum, obj) => obj.price + sum, 0)
+	const tax = Math.floor(totalPrice / 100 * 5)
+
 
 	const onClickOrder = async () => {
 		try {
@@ -34,8 +39,8 @@ function Drawer({ items = [], onClose, onRemove }) {
 	}
 
 	return (
-		<div className='overlay'>
-			<div className='drawer'>
+		<div className={`${styles.overlay} ${opened ? styles.overlayVisible : ''}`}>
+			<div className={styles.drawer}>
 				<h2 className='d-flex justify-between mb-30'>
 					Корзина
 					<img
@@ -49,7 +54,7 @@ function Drawer({ items = [], onClose, onRemove }) {
 				</h2>
 				{items.length > 0 ? (
 					<React.Fragment>
-						<div className='items'>
+						<div className='items flex'>
 							{items.map((obj) => (
 								<div key={obj.id} className='cartItem d-flex align-center mb-20'>
 									<div
@@ -76,12 +81,12 @@ function Drawer({ items = [], onClose, onRemove }) {
 								<li>
 									<span>Итого: </span>
 									<div></div>
-									<b>21 498 руб. </b>
+									<b>{totalPrice} руб. </b>
 								</li>
 								<li>
 									<span>Налог 5%: </span>
 									<div></div>
-									<b>1074 руб. </b>
+									<b>{tax} руб. </b>
 								</li>
 							</ul>
 							<button disabled={isLoading} onClick={onClickOrder} className='greenButton'>

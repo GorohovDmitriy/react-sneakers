@@ -15,7 +15,7 @@ function Home({
 			item.title.toLowerCase().includes(searchValue.toLowerCase()),
 		)
 
-		return (isLoading ? [...Array(8)] : filtredItems).map((item, index) => (
+		return (isLoading ? [...Array(12)] : filtredItems).map((item, index) => (
 			<Card
 				key={index}
 				onFavorite={(obj) => onAddToFavorite(obj)}
@@ -29,7 +29,7 @@ function Home({
 		<div className='content p-40'>
 			<div className='d-flex align-center mb-40 justify-between'>
 				<h1>{searchValue ? `Поиск по запросу: '${searchValue}'` : 'Все кроссовки'}</h1>
-				<div className='search-block d-flex'>
+				<div className='search-block d-flex mr-30'>
 					<img src='/img/search.svg' alt='search' />
 					{searchValue && (
 						<img
