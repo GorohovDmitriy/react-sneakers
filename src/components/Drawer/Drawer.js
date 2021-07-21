@@ -46,7 +46,7 @@ function Drawer({ items = [], onClose, onRemove, opened }) {
 					<img
 						onClick={onClose}
 						className='removeBtn cu-p '
-						src='/img/btn-remove.svg'
+						src='img/btn-remove.svg'
 						alt='Remove'
 						width={32}
 						height={32}
