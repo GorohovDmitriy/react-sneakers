@@ -4,6 +4,9 @@
 	align-items: center;
 	margin: 40px auto;
 	margin-bottom: 5px;
+	@media (max-width: 768px) {
+		display: none;
+	}
 }
 .Info {
 	position: relative;
