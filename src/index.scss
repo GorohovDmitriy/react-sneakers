@@ -50,9 +50,16 @@ header {
 	}
 }
 .content {
+	.content-search {
+		@media (max-width: 768px) {
+			flex-direction: column;
+			width: 285px;
+		}
+	}
 	h1 {
 		@media (max-width: 768px) {
-			margin-left: 45px;
+			margin-left: -30px;
+			margin-bottom: 20px;
 		}
 		margin: 0;
 	}
